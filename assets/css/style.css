@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&family=Numans&family=Open+Sans:ital,wght@1,700&display=swap');
+
+body {
+    margin: 0;
+    background: linear-gradient(#0f172a, #061a33, #112044);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Numans', sans-serif;
+}
+
+h3, h4, a {
+    font-family: 'Averia Serif Libre', serif;
+
+}
+
+
+svg {
+    fill: white;
+    height: 30px;
+    padding: 2px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 25px;
+    background-image: url("../img/banner.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    border-bottom: 1px dashed #222222;
+}
+
+.navbar__logo {
+    height: 50px;
+    user-select: none;
+}
+
+.navbar__nav {
+    display: flex;
+}
+
+.navbar__nav li {
+    list-style: none;
+    display: inline-block;
+    transition: all .125s;
+}
+
+.navbar__nav a {
+    position: relative;
+    color: white;
+    padding: 2px;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.navbar__nav a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffff25;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform .3s ease-in-out;
+}
+
+.navbar__nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.presentacion__contenedor {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 35%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.presentacion {
+    color: white;
+    margin-left: 100px;
+    user-select: none;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 0 0 15px #061a33;
+}
+
+.presentacion h3 {
+    font-size: 32px;
+}
+
+.presentacion h1 {
+    font-size: 48px;
+    color: #ffff25;
+}
+
+.presentacion__foto {
+    border-radius: 50%;
+}
+
+.presentacion__foto img {
+    width: 300px;
+    border-radius: 100%;
+    border: 10px solid #d8dad8;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+main h3 {
+    text-align: center;
+    font-size: 40px;
+}
+
+
+section {
+    width: 1200px;
+    margin: 40px 0;
+    
+}
+
+section h3 {
+    text-shadow: 0 0 15px #1f5659 ;
+}
+
+section h3::before {
+    content: "< ";
+    color: #1f5659;
+}
+
+section h3::after {
+    content: " />";
+    color: #1f5659;
+
+}
+
+.sobremi {
+    width: 800px;
+}
+
+.sobremi p {
+    font-size: 20px;
+}
+
+.sobremi a {
+    margin-right: 20px;
+    color: white;
+}
+
+.sobremi__links {
+    display: flex;
+    align-items: center;
+}
+
+.sobremi .logo-linkedin:hover {
+    fill: #0a66c2;
+}
+
+.sobremi .logo-github:hover {
+    fill: #320887;
+}
+
+.sobremi__linkcv {
+    text-decoration: dotted;
+    font-size: 20px;
+    padding: 3px;
+    color: #3c3c3c;
+    transition: all .125s;
+}
+
+.sobremi__linkcv:hover {
+    color: #1f5659;
+}
+
+.habilidades__imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.habilidades__imagenes .logo {
+    width: 256px;
+}
+
+.proyectos__contenedor {
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto__contenedor {
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    gap: 40px;
+}
+
+.proyecto {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto__imagen {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.proyecto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+    opacity: 0.9;
+}
+
+.proyecto img:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.proyecto__descripcion {
+    font-size: 24px;
+}
+
+.proyecto__descripcion h4 {
+    font-size: 24px;
+    color: #70e000;
+}
+
+.proyecto__descripcion a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.proyecto__descripcion svg:hover {
+    fill: #0a66c2;
+}
+
+
+
+footer {
+    border-top: 1px dashed #222222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+footer h3 {
+    font-size: 32px;
+}
+
+footer .redes {
+    display: flex;
+    gap: 40px;
+}
+
+.redes a {
+    color: white;
+}
+
+.redes .logo-whatsapp:hover {
+    fill: #11ba17;
+}
+
+.redes .logo-instagram:hover {
+    fill: #cb2473;
+}
+
+.redes .logo-mail:hover {
+    fill: #dd4e42;
+}
