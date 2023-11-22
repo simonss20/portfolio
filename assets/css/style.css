@@ -135,8 +135,7 @@ svg {
 
 .presentacion__foto {
     border-radius: 50%;
-    position: absolute;
-    top: 180%;
+    
 }
 
 .presentacion__foto img {
@@ -341,6 +340,7 @@ footer .redes {
     .navbar {
         flex-direction: column;
         justify-content: unset;
+        border: none;
     }
 
     .botones__navbar {
@@ -396,6 +396,10 @@ footer .redes {
         display: none;
     }
 
+    main {
+        margin-top: 200px;
+    }
+
     section h3 {
         scroll-margin-top: 120px;
         font-size: 36px;
@@ -413,15 +417,11 @@ footer .redes {
 
     .presentacion__contenedor .presentacion__foto {
         position: absolute;
-        bottom: -300px;
+        top: 180%;
     }
 
     .presentacion__foto img {
         border-color: #061a33;
-    }
-
-    main {
-        margin-top: 200px;
     }
 
     .sobremi {
