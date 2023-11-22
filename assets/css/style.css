@@ -350,7 +350,7 @@ footer .redes {
         width: 100%;
         z-index: 1;
         box-sizing: border-box;
-        border-bottom: 2px solid white;
+        border-bottom: 1px solid white;
     }
     
     .navbar__boton {
@@ -382,6 +382,10 @@ footer .redes {
         display: block;
         border-bottom: 1px solid white;
         text-align: center;
+    }
+
+    .navbar__nav li:first-child {
+        border-top: 1px solid white;
     }
 
     .navbar__nav li:hover {
