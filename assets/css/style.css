@@ -50,11 +50,8 @@ svg {
 }
 
 .oculto {
-    display: none;
-}
-
-.fondoGris {
-    background-color: #3c3c3cbb;
+    transform: scaleY(0);
+    overflow: hidden;
 }
 
 .bordesBlancos {
@@ -74,7 +71,6 @@ svg {
 .navbar__nav li {
     list-style: none;
     display: inline-block;
-    transition: all .125s;
 }
 
 .navbar__nav a {
@@ -96,12 +92,13 @@ svg {
     left: 0;
     background-color: #ffff25;
     transform: scaleX(0);
-    transform-origin: bottom left;
+    transform-origin: bottom right;
     transition: transform .3s ease-in-out;
 }
 
 .navbar__nav a:hover::after {
     transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .navbar__nav svg {
@@ -114,7 +111,7 @@ svg {
     width: 100%;
     display: flex;
     position: absolute;
-    top: 35%;
+    top: 20%;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -138,6 +135,8 @@ svg {
 
 .presentacion__foto {
     border-radius: 50%;
+    position: absolute;
+    top: 180%;
 }
 
 .presentacion__foto img {
@@ -180,7 +179,7 @@ section h3::after {
 }
 
 .sobremi {
-    width: 80%;
+    width: 60%;
 }
 
 .sobremi p {
@@ -205,16 +204,23 @@ section h3::after {
     fill: #320887;
 }
 
-.sobremi__linkcv {
+.sobremi .sobremi__linkcv {
     text-decoration: dotted;
     font-size: 20px;
     padding: 3px;
-    color: #3c3c3c;
     transition: all .125s;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: white;
+    color: #112044;
 }
 
+
+
 .sobremi__linkcv:hover {
-    color: #1f5659;
+    color: #0a66c2;
+    border-color: #0a66c2;
 }
 
 .habilidades__imagenes {
@@ -269,12 +275,12 @@ section h3::after {
 
 .proyecto__descripcion a {
     display: flex;
+    width: fit-content;
     align-items: center;
     gap: 10px;
     font-size: 24px;
     color: white;
     text-decoration: none;
-    margin-right: 10px;
 }
 
 .proyecto__descripcion svg:hover {
@@ -337,8 +343,17 @@ footer .redes {
         justify-content: unset;
     }
 
+    .botones__navbar {
+        display: flex;
+        background-color: #3c3c3cbb;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        box-sizing: border-box;
+        border-bottom: 2px solid white;
+    }
+    
     .navbar__boton {
-        position: absolute;
         top: 25px;
         right: 25px;
         display: block;
@@ -350,26 +365,75 @@ footer .redes {
     }
     
     .navbar__nav ul {
+        background-color: #3c3c3cbb;
+        position: fixed;
+        z-index: 1;
+        top: 105px;
+        width: 100%;
         flex-direction: column;
         align-items: center;
         margin: 0;
-        background-color: #3c3c3cbb;
         padding: 0;
+        transition: transform .3s ease-in-out;
+        transform-origin: top;
     }
     
     .navbar__nav li {
         display: block;
-        border-top: 1px solid white;
         border-bottom: 1px solid white;
         text-align: center;
     }
 
     .navbar__nav li:hover {
-        background-color: #3c3c3cff;
+        background-color: #3c3c3cee;
+    }
+
+    .navbar__nav a::after {
+        display: none;
+    }
+
+    section h3 {
+        scroll-margin-top: 120px;
+        font-size: 36px;
+    }
+
+    .presentacion__contenedor {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .presentacion__contenedor .presentacion {
+        margin: 0;
+        text-align: center;
+    }
+
+    .presentacion__contenedor .presentacion__foto {
+        position: absolute;
+        bottom: -300px;
+    }
+
+    .presentacion__foto img {
+        border-color: #061a33;
+    }
+
+    main {
+        margin-top: 200px;
+    }
+
+    .sobremi {
+        width: 80%;
     }
 
     .habilidades__imagenes .logo {
         width: 96px;
+    }
+
+    .proyecto__descripcion h4 {
+        font-size: 32px;
+    }
+
+    .proyecto__descripcion p {
+        font-size: 22px;
     }
 
 }

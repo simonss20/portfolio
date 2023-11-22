@@ -40,6 +40,8 @@ const datosHabilidades = [
 const zonaBotonesNav = document.querySelector(".botones__navbar");
 const burger = document.querySelector(".navbar__boton");
 const menu = document.querySelector(".navbar__nav ul");
+const linksNavbar = document.querySelectorAll(".navbar__nav a");
+
 
 
 const insertarHabilidades =  () => {
@@ -51,7 +53,6 @@ const insertarHabilidades =  () => {
 
 const alternarNavbar = () => {
     menu.classList.toggle("oculto");
-    zonaBotonesNav.classList.toggle("fondoGris"); 
     burger.classList.toggle("bordesBlancos");
 }
 
@@ -60,11 +61,13 @@ const manejarPantalla = () => {
         menu.classList.add("oculto");
     } else {
         menu.classList.remove("oculto");
-        zonaBotonesNav.classList.remove("fondoGris");
     }
 
 }
 
+linksNavbar.forEach(link => {
+    link.addEventListener("click", () => menu.classList.add("oculto"));
+});
 
 window.onload = () => {
     manejarPantalla();
