@@ -417,7 +417,7 @@ footer .redes {
 
     .presentacion__contenedor .presentacion__foto {
         position: absolute;
-        top: 180%;
+        top: calc(100vh - 350px);
     }
 
     .presentacion__foto img {
