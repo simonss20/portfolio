@@ -350,6 +350,7 @@ img {
 		border-bottom: 1px solid var(--blanco);
 		position: fixed;
 		z-index: 1;
+		padding: 35px;
 	}
 
 	.navbar__links {
