@@ -40,7 +40,7 @@ const datosHabilidades = [
 const datosProyectos = [
 	{
 		nombre: "Encriptador de texto",
-		rutaImagen: "assets/img/proyecto_encriptador.jpg",
+		rutaImagen: "assets/img/proyecto_encriptador.avif",
 		descripcion:
 			"Aplicacion que utiliza HTML, CSS Y Javascript para tomar un mensaje escrito por el usuario y encriptarlo en base a un codigo que reemplaza ciertos caracteres por otros.",
 		linkProyecto: "https://simonss20.github.io/one_encriptador_texto/",
