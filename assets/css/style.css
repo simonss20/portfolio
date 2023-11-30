@@ -242,7 +242,7 @@ img {
 	gap: 100px;
 	place-items: center;
 	place-content: center;
-	padding: 40px;
+	padding: 40px 0;
 	border-radius: 20px;
 }
 
