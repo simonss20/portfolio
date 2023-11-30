@@ -247,7 +247,7 @@ img {
 }
 
 .proyecto__imagen {
-	width: 80%;
+	width: 100%;
 	aspect-ratio: 16/9;
 	background-position: center;
 	background-size: cover;
