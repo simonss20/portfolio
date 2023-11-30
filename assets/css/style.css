@@ -247,7 +247,7 @@ img {
 }
 
 .proyecto__imagen {
-	width: 600px;
+	width: 80%;
 	aspect-ratio: 16/9;
 	background-position: center;
 	background-size: cover;
@@ -337,10 +337,6 @@ img {
 	.proyecto {
 		grid-template-columns: 1fr;
 		gap: 50px;
-	}
-
-	.proyecto__imagen {
-		max-width: 800px;
 	}
 }
 
