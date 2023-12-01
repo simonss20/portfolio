@@ -95,8 +95,6 @@ const manejarPantalla = () => {
 	
 	if (window.innerWidth <= 480) {
 		header.style.height = `calc(${alturaTotal}px + 104px)`;
-	} else if (window.innerWidth <= 1024) {
-		header.style.height = `calc(${alturaTotal}px + 154px)`;
 		navbarLinks.classList.add("navbar__links--oculto");
 		navbarToggler.classList.remove("navbar__toggler--presionado");
 		link.forEach((link) => {
@@ -104,10 +102,15 @@ const manejarPantalla = () => {
 				navbarLinks.classList.add("navbar__links--oculto")
 				);
 			});
-		} else {
+	} 
+	
+	if (window.innerWidth <= 1024) {
+		header.style.height = `calc(${alturaTotal}px + 154px)`;
+		navbarLinks.classList.add("navbar__links--oculto");
+	} else {
 			navbarLinks.classList.remove("navbar__links--oculto");
-		}
-	};
+	}
+};
 	
 	const insertarProyectos = () => {
 		const contenedorProyectos = document.querySelector(
