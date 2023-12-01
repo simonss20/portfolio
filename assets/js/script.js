@@ -91,11 +91,15 @@ const manejarImgProyectos = () => {
 
 };
 
-divFoto.style.bottom = `-${alturaFoto}px`;
+if (window.innerWidth <= 1024) {
+    let alturaFoto = divFoto.clientHeight;
+    divFoto.style.bottom = `-${alturaFoto}px`;
+}
+
 const manejarPantalla = () => {
 	
 	const alturaTotal = window.innerHeight;
-	let alturaFoto = divFoto.clientHeight;
+	
 
 	if (window.innerWidth <= 1024) {
 		header.style.height = `${alturaTotal+ (alturaFoto/2)}px`;
