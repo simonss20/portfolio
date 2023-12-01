@@ -47,10 +47,10 @@ const datosProyectos = [
 	},
 ];
 
-let alturaTotal = window.innerHeight;
 const header = document.querySelector(".header");
+const divFoto = document.querySelector(".presentacion__foto");
 
-header.style.height = alturaTotal + "px";
+
 
 const navbarLinks = document.querySelector(".navbar__links");
 const link = document.querySelectorAll(".navbar__links li");
@@ -93,21 +93,20 @@ const manejarImgProyectos = () => {
 
 const manejarPantalla = () => {
 	
-	if (window.innerWidth <= 480) {
-		header.style.height = `calc(${alturaTotal}px + 104px)`;
+	const alturaTotal = window.innerHeight;
+	let alturaFoto = divFoto.clientHeight;
+
+	if (window.innerWidth <= 1024) {
+		header.style.height = `${alturaTotal+ (alturaFoto/2)}px`;
+		divFoto.style.bottom = `-${alturaFoto}px`;
 		navbarLinks.classList.add("navbar__links--oculto");
-		navbarToggler.classList.remove("navbar__toggler--presionado");
 		link.forEach((link) => {
 			link.addEventListener("click", () =>
 				navbarLinks.classList.add("navbar__links--oculto")
 				);
 			});
-	} 
-	
-	if (window.innerWidth <= 1024) {
-		header.style.height = `calc(${alturaTotal}px + 154px)`;
-		navbarLinks.classList.add("navbar__links--oculto");
 	} else {
+			header.style.height = alturaTotal + "px";
 			navbarLinks.classList.remove("navbar__links--oculto");
 	}
 };

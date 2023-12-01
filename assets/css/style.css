@@ -155,7 +155,7 @@ img {
 	width: 400px;
 	height: 400px;
 	border-radius: 50%;
-	outline: 10px solid var(--azul-marco-foto);
+	border: 10px solid var(--azul-marco-foto);
 }
 
 .principal {
@@ -348,7 +348,6 @@ img {
 	}
 	.navbar {
 		background-color: var(--gris-transparente);
-		border-bottom: 1px solid var(--blanco);
 		position: fixed;
 		z-index: 1;
 		padding: 35px;
@@ -377,6 +376,7 @@ img {
 
 	.navbar__links li:first-child {
 		display: block;
+		border-top: 1px solid var(--blanco);
 	}
 
 	.navbar__toggler {
@@ -389,7 +389,6 @@ img {
 
 	.presentacion__foto {
 		position: absolute;
-		bottom: -316px;
 	}
 
 	.sobremi {
@@ -411,10 +410,6 @@ img {
 
 	.presentacion__titulo h1:nth-child(2) {
 		font-size: 32px;
-	}
-
-	.presentacion__foto {
-		bottom: -216px;
 	}
 
 	.presentacion__img {
