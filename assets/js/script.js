@@ -91,6 +91,7 @@ const manejarImgProyectos = () => {
 
 };
 
+divFoto.style.bottom = `-${alturaFoto}px`;
 const manejarPantalla = () => {
 	
 	const alturaTotal = window.innerHeight;
@@ -98,7 +99,6 @@ const manejarPantalla = () => {
 
 	if (window.innerWidth <= 1024) {
 		header.style.height = `${alturaTotal+ (alturaFoto/2)}px`;
-		divFoto.style.bottom = `-${alturaFoto}px`;
 		navbarLinks.classList.add("navbar__links--oculto");
 		link.forEach((link) => {
 			link.addEventListener("click", () =>
