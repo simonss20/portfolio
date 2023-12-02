@@ -95,7 +95,7 @@ if (window.innerWidth <= 1024) {
 	const alturaTotal = window.innerHeight;
     }
 
-const manejarPantalla = () => {
+const manejarPantalla = (alturaTotal) => {
 	
 	
 	let alturaFoto = divFoto.clientHeight;
