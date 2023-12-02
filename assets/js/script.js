@@ -1,3 +1,11 @@
+const header = document.querySelector(".header");
+const divFoto = document.querySelector(".presentacion__foto");
+const alturaTotal = window.innerHeight;
+let alturaFoto = divFoto.clientHeight;
+header.style.height = `${alturaTotal + alturaFoto / 2}px`;
+const navbarLinks = document.querySelector(".navbar__links");
+const link = document.querySelectorAll(".navbar__links li");
+const navbarToggler = document.querySelector(".navbar__toggler");
 const datosHabilidades = [
 	{
 		nombre: "HTML",
@@ -36,7 +44,6 @@ const datosHabilidades = [
 		ruta: "assets/img/nodejs-logo.png",
 	},
 ];
-
 const datosProyectos = [
 	{
 		nombre: "Encriptador de texto",
@@ -46,40 +53,27 @@ const datosProyectos = [
 		linkProyecto: "https://simonss20.github.io/one_encriptador_texto/",
 	},
 ];
-
-const header = document.querySelector(".header");
-const divFoto = document.querySelector(".presentacion__foto");
-
-
-
-const navbarLinks = document.querySelector(".navbar__links");
-const link = document.querySelectorAll(".navbar__links li");
-const navbarToggler = document.querySelector(".navbar__toggler");
-
-
 const manejarImgProyectos = () => {
-
 	if (window.innerWidth > 1024) {
-		
 		const imagenProyecto = document.querySelector(".proyecto__imagen");
 		const imgHeight = imagenProyecto.clientHeight;
 		const imgWidth = imagenProyecto.clientWidth;
-	
+
 		imagenProyecto.addEventListener("mousemove", (e) => {
 			const { layerX, layerY } = e;
 			const yRotation = ((layerX - imgWidth / 2) / imgWidth) * 20;
 			const xRotation = ((layerY - imgHeight / 2) / imgHeight) * 20;
-	
+
 			const trasnsformacionesImg = `
 				perspective(500px)
 				scale(1.2)
 				rotateX(${xRotation}deg)
 				rotateY(${yRotation}deg)
 			`;
-	
+
 			imagenProyecto.style.transform = trasnsformacionesImg;
 		});
-	
+
 		imagenProyecto.addEventListener("mouseout", () => {
 			imagenProyecto.style.transform = `
 				scale(1)
@@ -88,41 +82,13 @@ const manejarImgProyectos = () => {
 			`;
 		});
 	}
-
 };
-
-if (window.innerWidth <= 1024) {
-	const alturaTotal = window.innerHeight;
-        let alturaFoto = divFoto.clientHeight;
-        divFoto.style.bottom = `-${alturaFoto}px`;
-	header.style.height = `${alturaTotal+ (alturaFoto/2)}px`;
-    }
-
-const manejarPantalla = (alturaTotal) => {
-	
-	
-	
-
-	if (window.innerWidth <= 1024) {
-		
-		navbarLinks.classList.add("navbar__links--oculto");
-		link.forEach((link) => {
-			link.addEventListener("click", () =>
-				navbarLinks.classList.add("navbar__links--oculto")
-				);
-			});
-	} else {
-			header.style.height = alturaTotal + "px";
-			navbarLinks.classList.remove("navbar__links--oculto");
-	}
-};
-	
-	const insertarProyectos = () => {
-		const contenedorProyectos = document.querySelector(
-			".proyectos__contenedor"
-			);
-			for (proyecto of datosProyectos) {
-				contenedorProyectos.innerHTML += `
+const insertarProyectos = () => {
+	const contenedorProyectos = document.querySelector(
+		".proyectos__contenedor"
+	);
+	for (proyecto of datosProyectos) {
+		contenedorProyectos.innerHTML += `
 				<div class="proyecto">
 				<div class="proyecto__imagen" style="background-image: url(${proyecto.rutaImagen})"></div>
 				<div class="proyecto__descripcion">
@@ -142,19 +108,31 @@ const manejarPantalla = (alturaTotal) => {
             </div>
             </div>
             `;
-		}
+	}
 };
-
 const insertarHabilidades = () => {
 	const contenedorImagenes = document.querySelector(".habilidades__imagenes");
 	for (lenguaje of datosHabilidades) {
 		contenedorImagenes.innerHTML += ` <img src=${lenguaje.ruta}  alt=${lenguaje.nombre} class="habilidades__logo" title=${lenguaje.nombre} draggable="false">`;
 	}
 };
-
 const alternarNavbar = () => {
 	navbarLinks.classList.toggle("navbar__links--oculto");
 	navbarToggler.classList.toggle("navbar__toggler--presionado");
+};
+const manejarPantalla = () => {
+	if (window.innerWidth <= 1024) {
+		divFoto.style.bottom = `-${alturaFoto}px`;
+		navbarLinks.classList.add("navbar__links--oculto");
+		link.forEach((link) => {
+			link.addEventListener("click", () =>
+				navbarLinks.classList.add("navbar__links--oculto")
+			);
+		});
+	} else {
+		header.style.height = alturaTotal + "px";
+		navbarLinks.classList.remove("navbar__links--oculto");
+	}
 };
 
 window.onload = () => {

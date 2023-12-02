@@ -320,35 +320,11 @@ img {
 	margin: 24px 0;
 }
 
-
 @media screen and (max-width: 1024px) {
-
-	.presentacion {
-		margin: 150px;
-	}
-	
-	.presentacion__img {
-		height: 300px;
-		width: 300px;
-	}
-	
-	.habilidades__imagenes {
-		grid-template-columns: repeat(3, minmax(128px, 1fr));
-		gap: 50px;
-	}
-	
-	.habilidades__logo {
-		width: 128px;
-		height: 128px;
-	}
-	
-	.proyecto {
-		grid-template-columns: 1fr;
-		gap: 50px;
-	}
 	.navbar {
 		background-color: var(--gris-transparente);
 		position: fixed;
+		top: 0;
 		z-index: 1;
 		padding: 35px;
 	}
@@ -384,6 +360,7 @@ img {
 	}
 
 	.presentacion {
+		margin: 150px;
 		flex-direction: column;
 	}
 
@@ -391,8 +368,28 @@ img {
 		position: absolute;
 	}
 
+	.presentacion__img {
+		height: 300px;
+		width: 300px;
+	}
+
 	.sobremi {
 		margin-top: 150px;
+	}
+
+	.habilidades__imagenes {
+		grid-template-columns: repeat(3, minmax(128px, 1fr));
+		gap: 50px;
+	}
+
+	.habilidades__logo {
+		width: 128px;
+		height: 128px;
+	}
+
+	.proyecto {
+		grid-template-columns: 1fr;
+		gap: 50px;
 	}
 }
 
@@ -403,7 +400,6 @@ img {
 }
 
 @media screen and (max-width: 480px) {
-	
 	.presentacion__titulo h1 {
 		font-size: 26px;
 	}
@@ -422,14 +418,15 @@ img {
 	}
 
 	.seccion__titulo {
-		font-size: 28px; 
+		font-size: 28px;
 	}
 
 	.sobremi {
 		margin-top: 100px;
 	}
 
-	.sobremi__descripcion, .sobremi__linkcv {
+	.sobremi__descripcion,
+	.sobremi__linkcv {
 		font-size: 16px;
 	}
 
