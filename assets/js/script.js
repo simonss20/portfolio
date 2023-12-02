@@ -93,16 +93,18 @@ const manejarImgProyectos = () => {
 
 if (window.innerWidth <= 1024) {
 	const alturaTotal = window.innerHeight;
+        let alturaFoto = divFoto.clientHeight;
+        divFoto.style.bottom = `-${alturaFoto}px`;
+	header.style.height = `${alturaTotal+ (alturaFoto/2)}px`;
     }
 
 const manejarPantalla = (alturaTotal) => {
 	
 	
-	let alturaFoto = divFoto.clientHeight;
-        divFoto.style.bottom = `-${alturaFoto}px`;
+	
 
 	if (window.innerWidth <= 1024) {
-		header.style.height = `${alturaTotal+ (alturaFoto/2)}px`;
+		
 		navbarLinks.classList.add("navbar__links--oculto");
 		link.forEach((link) => {
 			link.addEventListener("click", () =>
