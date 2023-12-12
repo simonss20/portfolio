@@ -28,6 +28,7 @@ body {
 	margin: 0;
 	font-family: var(--fuente-textos);
 	color: var(--blanco);
+	user-select: none;
 }
 
 h1,
@@ -42,10 +43,6 @@ svg {
 	fill: white;
 	height: 30px;
 	padding: 2px;
-}
-
-img {
-	user-select: none;
 }
 
 .header {
@@ -68,6 +65,7 @@ img {
 	justify-content: space-between;
 	align-items: center;
 	box-sizing: border-box;
+	z-index: 1;
 }
 
 .navbar__img {
@@ -333,7 +331,6 @@ img {
 		padding: 20px;
 		top: 0;
 		justify-content: end;
-		z-index: 1;
 	}
 
 	.navbar::before {

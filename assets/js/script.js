@@ -125,9 +125,10 @@ const manejarPantalla = () => {
 		divFoto.style.bottom = `-${alturaFoto}px`;
 		navbarLinks.classList.add("navbar__links--oculto");
 		link.forEach((link) => {
-			link.addEventListener("click", () =>
-				navbarLinks.classList.add("navbar__links--oculto")
-			);
+			link.addEventListener("click", () => {
+				navbarLinks.classList.add("navbar__links--oculto");
+				navbarToggler.classList.remove("navbar__toggler--presionado");
+			});
 		});
 	} else {
 		header.style.height = alturaTotal + "px";
@@ -136,6 +137,12 @@ const manejarPantalla = () => {
 };
 
 window.onload = () => {
+	let urlActual = window.location.href;
+	if (urlActual.indexOf("#") !== -1) {
+		let urlNueva = urlActual.split("#")[0];
+		window.location.href = urlNueva;
+	}
+
 	insertarHabilidades();
 	insertarProyectos();
 	manejarImgProyectos();
